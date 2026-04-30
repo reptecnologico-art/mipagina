@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <title>CALCULADORA WEB</title>
+</head>
+<body>
+    <div class="container">
+    <h1>CALCULADORA WEB APP</h1>
+    <br>
+    <input id="valor1" class="form-control" type="number">
+    <br>
+    <input id="valor2" class="form-control" type="number">
+    <br>
+    <hr>
+ 
+    <br>
+    <p id="resultado">...</p>
+    <br>
+<table class="table table-striped table-hover align-middle">
+    <tr>
+        <div class="">
+            <td> <button type="button" class="btn btn-primary" onclick="myFunction()">+</button> </td>
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionMin()"">Min</button></td>    
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionMax()">Max</button></td>
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionPotencia()"">^</button></td> 
+
+        </div>
+    </tr>
+
+     <tr>
+        <div>
+            <td> <button type="button" class="btn btn-success" onclick="myFunctionResta()">-</button> </td>
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionRaiz()">√x</button> </td>
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionPorc()"">%</button></td> 
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionValorAbs()">|x|</button></td>
+
+        </div>
+    </tr>
+
+     <tr>
+        <div>
+             <td> <button type="button" class="btn btn-light" onclick="myFunctionMul()">X</button> </td>
+             <td> <button type="button" class="btn btn-dark" onclick="myFunctionSen()">Sen</button> </td>
+             <td> <button type="button" class="btn btn-dark" onclick="myFunctionBin()">Bin</button></td>
+             <td> <button type="button" class="btn btn-dark" onclick="myFunctionExp()">eˣ</button></td>
+
+        </div>
+    </tr>
+
+     <tr>
+        <div>
+            <td> <button type="button" class="btn btn-info" onclick="myFunctionDiv()">/</button> </td>
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionCos()">Cos</button> </td>
+            <td> <button type="button" class="btn btn-dark" onclick="myFunctionRC()">∛</button></td>
+            <td> <button type="button" class="btn btn-danger" onclick="myFunctionBorrar()">C</button> </td>
+        </div>
+    </tr>
+    
+</table>
+
+   
+    <script>
+        function myFunctionRaiz(){
+            var x, raiz, text;
+            x = document.getElementById("valor1").value;
+            if(isNaN(x)){
+                text = "INTRODUCIR NUMEROS";
+            }
+            else{
+                raiz = Math.sqrt(x);
+                text = raiz;
+            }
+            document.getElementById("resultado").innerHTML=text;
+        }
+
+         function myFunctionBorrar(){
+            text="";
+            document.getElementById("valor1").value="";
+            document.getElementById("valor2").value="";
+            document.getElementById("resultado").innerHTML=text;
+        }
+
+        function myFunction(){
+            var x, y, suma, text;
+            x = document.getElementById("valor1").value;
+            y = document.getElementById("valor2").value;
+
+            if(isNaN(x) || isNaN(y)){
+                text = "ES IMPORTANTE INTRODUCIR VALORES NUMERICOS";
+            }else{
+              suma = parseFloat(x)+parseFloat(y);
+              text=suma; 
+            }
+            document.getElementById("resultado").innerHTML=text;
+        }
+
+        function myFunctionResta(){
+            var x, y, resta, text;
+            x = document.getElementById("valor1").value;
+            y = document.getElementById("valor2").value;
+
+            if(isNaN(x) || isNaN(y)){
+                text = "INTRODUCE NUMEROS";
+            }else{
+                resta = parseFloat(x)-parseFloat(y);
+                text=resta;
+            }
+            document.getElementById("resultado").innerHTML=text;
+        }
+    </script>
+    </div>
+</body>
+</html>
